@@ -8,6 +8,10 @@ const term = require("terminal-kit").terminal;
 const bodyParser = require("body-parser")
 const app = express();
 
+// set this differently in your secrets, you'll need it to access the API!
+const password = process.env.PASSWORD;
+
+
 const config = require("./config/config.json")
 
 // for ejs rendering, fun!
@@ -23,10 +27,18 @@ app.use(bodyParser.urlencoded({
 	extended: true
 }));
 
-const apiFiles = fs.readdirSync("api")
+// TODO: Clean this
+const apiFiles = fs.readdirSync("api").filter(file => file.split(".")[file.split(".").length - 1] === "js")
 
+// make endpoints available 
 for (endpoint of apiFiles) {
-	
+	let data = require('./api/' + endpoint)
+	if (data.get) {
+		app.get(file.split(".").slice(0, file.split(".").length - 1))
+	}
+	if (data.post) {
+
+	}
 }
 
 app.listen(config.port, null, null, () => {
