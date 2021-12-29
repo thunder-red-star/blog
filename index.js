@@ -34,10 +34,14 @@ const apiFiles = fs.readdirSync("api").filter(file => file.split(".")[file.split
 for (endpoint of apiFiles) {
 	let data = require('./api/' + endpoint)
 	if (data.get) {
-		app.get(file.split(".").slice(0, file.split(".").length - 1))
+		app.get(file.split(".").slice(0, file.split(".").length - 1), (req, res) => {
+			return data.get(req, res)
+		})
 	}
 	if (data.post) {
-
+		app.post(file.split(".").slice(0, file.split(".").length - 1), (req, res) => {
+			return data.post(req, res)
+		})
 	}
 }
 
