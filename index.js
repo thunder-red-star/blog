@@ -34,14 +34,28 @@ const apiFiles = fs.readdirSync("api").filter(file => file.split(".")[file.split
 for (endpoint of apiFiles) {
 	let data = require('./api/' + endpoint)
 	if (data.get) {
-		app.get(endpoint.split(".").slice(0, endpoint.split(".").length - 1), (req, res) => {
-			return data.get(req, res)
-		})
+		try {
+			let endpointName = endpoint.split(".").slice(0, endpoint.split(".").length - 1);
+			app.get(endpointName, (req, res) => {
+				return data.get(req, res)
+			})
+			term.green("[INFO] GET endpoint added: " + endpointName + "\n")
+		} catch (err) {
+			term.red("[WARN] GET endpoint addition failed: " + endpointName + "\n")
+			term.red("[WARN] " + err + "\n")
+		}
 	}
 	if (data.post) {
-		app.post(endpoint.split(".").slice(0, endpoint.split(".").length - 1), (req, res) => {
-			return data.post(req, res)
-		})
+		try {
+			let endpointName = endpoint.split(".").slice(0, endpoint.split(".").length - 1);
+			app.post(endpointName, (req, res) => {
+				return data.post(req, res)
+			})
+			term.green("[INFO] POST endpoint added: " + endpointName + "\n")
+		} catch (err) {
+			term.red("[WARN] POST endpoint addition failed: " + endpointName + "\n")
+			term.red("[WARN] " + err + "\n")
+		}
 	}
 }
 
