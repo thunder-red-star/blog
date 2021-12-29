@@ -36,29 +36,29 @@ for (endpoint of apiFiles) {
 	if (data.get) {
 		try {
 			let endpointName = endpoint.split(".").slice(0, endpoint.split(".").length - 1);
-			app.get(endpointName, (req, res) => {
+			app.get('/api/' + endpointName, (req, res) => {
 				return data.get(req, res)
 			})
-			term.green("[INFO] GET endpoint added: " + endpointName + "\n")
+			term.green("[INFO] GET endpoint added: ").bold.brightGreen(endpointName + "\n")
 		} catch (err) {
-			term.red("[WARN] GET endpoint addition failed: " + endpointName + "\n")
+			term.red("[WARN] GET endpoint addition failed: ").bold.red(endpointName + "\n")
 			term.red("[WARN] " + err + "\n")
 		}
 	}
 	if (data.post) {
 		try {
 			let endpointName = endpoint.split(".").slice(0, endpoint.split(".").length - 1);
-			app.post(endpointName, (req, res) => {
+			app.post('/api/' + endpointName, (req, res) => {
 				return data.post(req, res)
 			})
-			term.green("[INFO] POST endpoint added: " + endpointName + "\n")
+			term.green("[INFO] POST endpoint added: ").bold.brightGreen(endpointName + "\n")
 		} catch (err) {
-			term.red("[WARN] POST endpoint addition failed: " + endpointName + "\n")
+			term.red("[WARN] POST endpoint addition failed: ").bold.red(endpointName + "\n")
 			term.red("[WARN] " + err + "\n")
 		}
 	}
 }
 
 app.listen(config.port, null, null, () => {
-	term.green("Blog started on port " + config.port)
+	term.brightGreen.bold("[INFO] Blog started on port " + config.port)
 });
