@@ -1,0 +1,28 @@
+{
+  "name": "blag",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thunder-red-star/blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thunder-red-star/blog/issues"
+  },
+  "homepage": "https://github.com/thunder-red-star/blog#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "express-session": "^1.17.2",
+    "node": "^17.3.0",
+    "terminal-kit": "^2.3.0",
+    "url": "^0.11.0"
+  }
+}
