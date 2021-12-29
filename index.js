@@ -30,5 +30,5 @@ for (endpoint of apiFiles) {
 }
 
 app.listen(config.port, null, null, () => {
-	term.green("")
+	term.green("Blog started on port " + config.port)
 });
