@@ -1,4 +1,5 @@
 const renderTemplate = require('../utils/renderTemplate.js')
+const formidable = require('formidable');
 
 module.exports = {
 	get: function (req, res) {
