@@ -35,7 +35,7 @@ for (endpoint of apiFiles) {
 	let data = require('./api/' + endpoint)
 	if (data.get) {
 		try {
-			let endpointName = endpoint.split(".").slice(0, endpoint.split(".").length - 1);
+			let endpointName = endpoint.split(".").slice(0, endpoint.split(".").length - 1).join(".");
 			app.get('/api/' + endpointName, (req, res) => {
 				return data.get(req, res)
 			})
@@ -47,7 +47,7 @@ for (endpoint of apiFiles) {
 	}
 	if (data.post) {
 		try {
-			let endpointName = endpoint.split(".").slice(0, endpoint.split(".").length - 1);
+			let endpointName = endpoint.split(".").slice(0, endpoint.split(".").length - 1).join(".");
 			app.post('/api/' + endpointName, (req, res) => {
 				return data.post(req, res)
 			})
