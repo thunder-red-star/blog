@@ -1,8 +1,8 @@
-const renderTemplate = require('./utils/')
+const renderTemplate = require('../utils/renderTemplate.js')
 
 module.exports = {
 	get: function (req, res) {
-		res.
+		return renderTemplate(req, res, 'upload.ejs')
 	},
 	post: function (req, res) {
 		const form = formidable({ multiples: true });

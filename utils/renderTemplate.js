@@ -1,3 +1,5 @@
+const path = require("path")
+
 module.exports = (req, res, template, data = {}) => {
 	const currentDir = path.resolve(`${process.cwd()}`);
 	const templateDir = path.resolve(currentDir.split("/")[file.split("/").length - 1] + path.sep + "templates")

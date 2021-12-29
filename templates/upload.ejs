@@ -1,5 +1,9 @@
-<%- include("partials/header", { path, title: "File upload" }) %>
+<%- include("partials/header", { title: "File upload" }) %>
 
-
+<form action="/api/upload" enctype="multipart/form-data" method="post">
+    <form>
+      <div>File: <input type="file" name="multipleFiles" multiple="multiple" /></div>
+      <input type="submit" value="Upload" />
+    </form>
 
 <%- include("partials/footer") %>
