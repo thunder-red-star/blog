@@ -7,6 +7,8 @@ const fs = require("fs");
 const term = require("terminal-kit").terminal;
 const bodyParser = require("body-parser");
 const app = express();
+const MemoryStore = require('memorystore')(session);
+
 
 // set this differently in your secrets, you'll need it to access the API!
 const password = process.env.PASSWORD;
@@ -75,6 +77,8 @@ for (endpoint of apiFiles) {
 		}
 	}
 }
+
+
 
 app.listen(config.port, null, null, () => {
 	term.brightGreen.bold("[INFO] Blog started on port " + config.port);
