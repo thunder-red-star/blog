@@ -11,8 +11,7 @@ const showdown = new Showdown.Converter({
   tasklists: true
 });
 
-module.exports = function mdToHtml(mdFilePath, htmlFilePath) {
-  const md = fs.readFileSync(mdFilePath, 'utf8');
+module.exports = function mdToHtml(md) {
   const html = showdown.makeHtml(md);
   return html
 };

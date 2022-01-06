@@ -1,26 +1,29 @@
-
+const fs = require('fs');
 // get the contents within the <pm> tag, split it, and assign the values to the object
 function postMetaData (data) {
     var meta = data.split('</pm>')[0].replace("<pm>", "").split('\n');
-    var metaData = {
+    var metadata = {
         title: meta[0],
-        author: meta[1],
-        date: meta[2]
+        description: meta[1],
+        author: meta[2],
+        date: meta[3]
     }
-    return metaData;
+    return metadata;
 }
 
 // get the contents within the <pc> tag and return it
 function postContent (data) {
-    var content = data.split('</pc>')[0].replace("<pc>", "");
+    console.log(data)
+    var content = data.split('<pc>')[1].replace("</pc>", "");
     return content;
 }
 
 function postData (data) {
-    var metaData = postMetaData(data);
-    var content = postContent(data);
+    contents = fs.readFileSync(data, {encoding: 'utf8'});
+    var metadata = postMetaData(contents);
+    var content = postContent(contents);
     return {
-        meta: metaData,
+        meta: metadata,
         content: content
     }
 }
