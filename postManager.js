@@ -14,3 +14,7 @@ function writeMappingDB () {
 
     fs.writeFileSync('./db/pages.json', JSON.stringify(mappingDB));
 }
+
+module.exports = {
+    writeMappingDB
+};
