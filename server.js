@@ -17,6 +17,7 @@ function start () {
     // create GET routes for all the pages in the map file, such that if a request is made to /posts/pageName, the marked up html is returned
     for (let page in postMaps) {
         app.get('/posts/' + page, (req, res) => {
+            console.log(`[GET] /posts/${page}`);
             res.send(format(postMaps[page]));
         });
     }
