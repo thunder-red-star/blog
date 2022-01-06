@@ -22,6 +22,12 @@ function start () {
         });
     }
 
+    // create GET route for the index page
+    app.get('/', (req, res) => {
+        console.log(`[GET] /`);
+        res.send(format("index.post"));
+    });
+
     // start the server on the port specified in the config file
     app.listen(config.port, () => {
         console.log(`Server started on port ${config.port}`);

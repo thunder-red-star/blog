@@ -1,0 +1,48 @@
+<pm>
+Index Page
+You have found a new blog!
+ThunderRedStar
+01/05/2022
+</pm>
+<pc>
+# Hello World!
+I am rebuilding my blog, as you can see.
+Here's some markdown as proof of concept.
+
+**This should be bold**
+
+*This should be italic*
+
+~~This should be strikethrough~~
+
+`Showdown.Converter().makeHtml("This should be code")`
+
+```js
+function postData (data) {
+    contents = fs.readFileSync(data, {encoding: 'utf8'});
+    var metadata = postMetaData(contents);
+    var content = postContent(contents);
+    return {
+        meta: metadata,
+        content: content
+    }
+}
+```
+| hello | world | this | is | cool |
+|-------|-------|------|----|------|
+| 1     | 2     | 3    | 4  | 5    |
+| 6     | 7     | 8    | 9  | 10   |
+| 11    | 12    | 13   | 14 | 69   |
+
+* Bullet 1
+* Bullet 2
+* Bullet 3
+
+1. Ordered 1
+2. Ordered 2
+3. Ordered 3
+
+- [ ] Checkbox 1
+- [x] Checkbox 2
+- [ ] Checkbox 3
+</pc>
