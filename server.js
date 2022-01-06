@@ -2,7 +2,6 @@
 
 // external imports
 const express = require('express');
-const showdown = require('showdown');
 const fs = require('fs');
 const path = require('path');
 
@@ -11,4 +10,13 @@ const config = require('./config');
 const mdToHtml = require('./utils/mdToHtml');
 
 const app = express();
+
+
+function start () {
+
+}
+
+module.exports = {
+    start: start
+}
 
