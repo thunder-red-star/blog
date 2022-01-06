@@ -13,7 +13,6 @@ function postMetaData (data) {
 
 // get the contents within the <pc> tag and return it
 function postContent (data) {
-    console.log(data)
     var content = data.split('<pc>')[1].replace("</pc>", "");
     return content;
 }
