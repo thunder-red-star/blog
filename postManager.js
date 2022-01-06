@@ -6,7 +6,7 @@ function writeMappingDB () {
     let mappingDB = {};
 
     const posts = postUtils.getPostNames();
-    const postFiles = postUtils.getPostFiles();
+    const postFiles = postUtils.getPostFilepaths();
 
     posts.forEach((element, idx) => {
         mappingDB[element] = postFiles[idx];

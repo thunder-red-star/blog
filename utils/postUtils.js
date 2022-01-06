@@ -13,7 +13,7 @@ function getPostNames () {
 function getPostFilepaths () {
     let posts = fs.readdirSync('./posts').filter(file => file.endsWith('.post'));
 
-    let postDir = path.resolve('../posts');
+    let postDir = path.resolve('./posts');
 
     return posts.map(post => {
         return path.resolve(postDir, post);
