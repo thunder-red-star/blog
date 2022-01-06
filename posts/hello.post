@@ -1,0 +1,11 @@
+<pm>
+Hello World!
+ThunderRedStar
+01/05/2022
+</pm>
+<pc>
+# Hello World!
+This is a major update to the project.
+This project implements custom files (.post) so that you can write blogs with metadata that this blog server can parse.
+Read the docs for more info.
+</pc>
